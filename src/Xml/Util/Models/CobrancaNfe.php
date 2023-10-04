@@ -62,13 +62,6 @@ class CobrancaNfe {
 
                     $this->soma_dublicatas += (float) $duplicata_obj->valor;
 
-                    $vencimento = new \DateTime($duplicata_obj->data_vencimento);
-                    $agora = new \DateTime();
-
-                    if ($vencimento->diff($agora)->getTimestamp() < 0) {
-                        $this->duplicata_vencida[] = $duplicata_obj;
-                    }
-
                     $this->duplicatas[] = $duplicata_obj;
 
                 }

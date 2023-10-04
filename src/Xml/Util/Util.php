@@ -53,7 +53,7 @@ class Util {
     private function validateExtension(): void
     {
         if(strtolower(pathinfo($this->path_file, PATHINFO_EXTENSION)) != $this->type){
-            throw new \Exception('A estenção '.$this->type.' do arquivo não é valida!');
+            throw new \Exception('A extensão '.$this->type.' do arquivo não é valida!');
         }
 
       
@@ -64,7 +64,7 @@ class Util {
     {
 
         if(!isset($cte->$type)) {
-            throw new \Exception("O arquivo não é do tipo $type, PROBLEMA NO LAYOUT DO ARQUIVO! FAVOR, CONTATAR A TI!");
+            throw new \Exception("O arquivo não é do tipo $type!");
         }
         
     }

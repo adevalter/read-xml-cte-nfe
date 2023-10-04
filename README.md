@@ -23,18 +23,23 @@ use Xml\Read\Nfe;
 <!--  -->
 $nfe = new Nfe("./teste.xml");
 $dados = $nfe->all();
+    </code>
+            </pre><br>
+               <pre>
+                <code>
+use Xml\Read\Nfe;
 <!--  -->
 // Pode ser usado as buscas separadamente.
 <!--  -->
-$dados = $nfe->getCabecalho();
 $dados = $nfe->getChave();
-$dados = $nfe->getCobranca();
-$dados = $nfe->getDestinatario();
+$dados = $nfe->getIdentificacaoNFE();
 $dados = $nfe->getEmitente();
+$dados = $nfe->getDestinatario();
 $dados = $nfe->getExpedidor();
-$dados = $nfe->getRecebedor();
+$dados = $nfe->getServicos();
 $dados = $nfe->getTotal();
-$dados = $nfe->getTranspotadora();
+$dados = $nfe->getCobranca();
+$dados = $nfe->getTransporte();
               </code>
             </pre><br>
   <h4>Exemplo CT-e</h4>

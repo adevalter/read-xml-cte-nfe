@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Xml\Util\Models;
+namespace Xml\Util\Models\Nfe;
 
-use Xml\Util\Models\Endereco;
+use Xml\Util\Models\Nfe\Endereco;
 use Xml\Util\Models\Traits\Atributes;
 
 
@@ -13,7 +13,7 @@ class Entidade {
     private object $xml;
     private string $type;
     public string | null $cnpj;
-    public string | null $iscricao_estadual;
+    public string | null $inscricao_estadual;
     public string | null $nome;
     public string | null $fone;
     public string | null $email;
@@ -45,7 +45,7 @@ class Entidade {
             'nome_fantasia' => 'xFant',
             'cnpj' => 'cnpj',
             'cpf' => 'cpf',
-            'iscricao_estadual'   => 'ie',
+            'inscricao_estadual' => 'ie',
             'codigo_regime_tributario'  => 'crt',
             'fone' => 'fone',
             'email' => 'email',
@@ -65,32 +65,5 @@ class Entidade {
         $this->endereco = new Endereco( $this->xml->$type );
 
     }
-
-    /**
-    * Faz a converssão de classe php para Object.
-    *
-    *
-    * @return object
-    */
-    public function toObject(){
-        $return = new \stdClass();
-        $return->cnpj = $this->cnpj;
-        $return->iscricao_estadual = $this->iscricao_estadual;
-        $return->nome = $this->nome;
-        $return->fone = $this->fone;
-        $return->codigo_regime_tributario = $this->codigo_regime_tributario;
-        $return->email = $this->email;
-        $return->inscricao_municipal = $this->inscricao_municipal;
-        $return->cnae = $this->cnae;
-
-        $return->endereco = $this->endereco->toObject();
-
-        return $return;
-    }
-
-    public function toArray(){
-        return get_object_vars($this->toObject());
-    }
     
-
 }

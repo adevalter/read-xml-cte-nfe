@@ -113,7 +113,7 @@ class Produto {
             'valor_compoe_total_nf' => 'indtot',
             'tipo_item' => 'ntipoitem',
             'destaca_produto_perigoso' => 'dprod',
-            'pedido_compra' => 'xped_item',
+            'pedido_compra' => 'xped',
             'numero_item_pedido_compra' => 'nitemped',
             'ficha_conteudo_importacao' => 'nfci',
             'numero_do_recopi' => 'nrecopi',
